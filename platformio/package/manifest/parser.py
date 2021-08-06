@@ -342,7 +342,7 @@ class LibraryJsonManifestParser(BaseManifestParser):
             data["homepage"] = data["url"]
             del data["url"]
 
-        for key in ("Inc", "exclude"):
+        for key in ("include", "exclude"):
             if key not in data:
                 continue
             if "export" not in data:
@@ -376,7 +376,7 @@ class LibraryJsonManifestParser(BaseManifestParser):
         if not isinstance(raw, dict):
             return None
         result = {}
-        for k in ("Inc", "exclude"):
+        for k in ("include", "exclude"):
             if not raw.get(k):
                 continue
             result[k] = raw[k] if isinstance(raw[k], list) else [raw[k]]
@@ -613,7 +613,7 @@ class LibraryPropertiesManifestParser(BaseManifestParser):
                     or None
                 )
         if include:
-            result["Inc"] = [include]
+            result["include"] = [include]
         return result
 
     @staticmethod

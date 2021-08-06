@@ -212,7 +212,7 @@ ProjectOptions = OrderedDict(
                     "System automatically adds this path to CPPPATH scope"
                 ),
                 sysenvvar="PLATFORMIO_INCLUDE_DIR",
-                default=os.path.join("$PROJECT_DIR", "Inc"),
+                default=os.path.join("$PROJECT_DIR", "include"),
             ),
             ConfigPlatformioOption(
                 group="directory",

@@ -107,7 +107,7 @@ def cli(
 
             default_patterns = [
                 config.get_optional_dir("Src"),
-                config.get_optional_dir("Inc"),
+                config.get_optional_dir("include"),
             ]
             tool_options = dict(
                 verbose=verbose,

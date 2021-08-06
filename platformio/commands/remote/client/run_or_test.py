@@ -83,8 +83,8 @@ class RunOrTestClient(AsyncClientBase):
     def _add_project_source_items(self, cfg, psync):
         psync.add_item(cfg.get_optional_dir("lib"), "lib")
         psync.add_item(
-            cfg.get_optional_dir("Inc"),
-            "Inc",
+            cfg.get_optional_dir("include"),
+            "include",
             cb_filter=self._cb_tarfile_filter,
         )
         psync.add_item(

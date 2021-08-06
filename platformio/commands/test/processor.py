@@ -23,7 +23,7 @@ from platformio import exception
 
 TRANSPORT_OPTIONS = {
     "arduino": {
-        "Inc": "#include <Arduino.h>",
+        "include": "#include <Arduino.h>",
         "object": "",
         "putchar": "Serial.write(c);",
         "flush": "Serial.flush();",
@@ -32,7 +32,7 @@ TRANSPORT_OPTIONS = {
         "language": "cpp",
     },
     "mbed": {
-        "Inc": "#include <mbed.h>",
+        "include": "#include <mbed.h>",
         "object": (
             "#if MBED_MAJOR_VERSION == 6\nUnbufferedSerial pc(USBTX, USBRX);\n"
             "#else\nRawSerial pc(USBTX, USBRX);\n#endif"
@@ -47,7 +47,7 @@ TRANSPORT_OPTIONS = {
         "language": "cpp",
     },
     "espidf": {
-        "Inc": "#include <stdio.h>",
+        "include": "#include <stdio.h>",
         "object": "",
         "putchar": "putchar(c);",
         "flush": "fflush(stdout);",
@@ -55,7 +55,7 @@ TRANSPORT_OPTIONS = {
         "end": "",
     },
     "zephyr": {
-        "Inc": "#include <sys/printk.h>",
+        "include": "#include <sys/printk.h>",
         "object": "",
         "putchar": 'printk("%c", c);',
         "flush": "",
@@ -63,7 +63,7 @@ TRANSPORT_OPTIONS = {
         "end": "",
     },
     "native": {
-        "Inc": "#include <stdio.h>",
+        "include": "#include <stdio.h>",
         "object": "",
         "putchar": "putchar(c);",
         "flush": "fflush(stdout);",
@@ -71,7 +71,7 @@ TRANSPORT_OPTIONS = {
         "end": "",
     },
     "custom": {
-        "Inc": '#include "unittest_transport.h"',
+        "include": '#include "unittest_transport.h"',
         "object": "",
         "putchar": "unittest_uart_putchar(c);",
         "flush": "unittest_uart_flush();",
