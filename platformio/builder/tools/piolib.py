@@ -173,10 +173,10 @@ class LibBuilderBase(object):
     @property
     def include_dir(self):
         if not all(
-            os.path.isdir(os.path.join(self.path, d)) for d in ("include", "Src")
+            os.path.isdir(os.path.join(self.path, d)) for d in ("Inc", "Src")
         ):
             return None
-        return os.path.join(self.path, "include")
+        return os.path.join(self.path, "Inc")
 
     @property
     def src_dir(self):
@@ -555,8 +555,8 @@ class MbedLibBuilder(LibBuilderBase):
 
     @property
     def include_dir(self):
-        if os.path.isdir(os.path.join(self.path, "include")):
-            return os.path.join(self.path, "include")
+        if os.path.isdir(os.path.join(self.path, "Inc")):
+            return os.path.join(self.path, "Inc")
         return None
 
     @property

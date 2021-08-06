@@ -113,7 +113,7 @@ env.Replace(
     PROJECT_PACKAGES_DIR=config.get_optional_dir("packages"),
     PROJECT_WORKSPACE_DIR=config.get_optional_dir("workspace"),
     PROJECT_LIBDEPS_DIR=config.get_optional_dir("libdeps"),
-    PROJECT_INCLUDE_DIR=config.get_optional_dir("include"),
+    PROJECT_INCLUDE_DIR=config.get_optional_dir("Inc"),
     PROJECT_SRC_DIR=config.get_optional_dir("Src"),
     PROJECTSRC_DIR=config.get_optional_dir("Src"),  # legacy for dev/platform
     PROJECT_TEST_DIR=config.get_optional_dir("test"),

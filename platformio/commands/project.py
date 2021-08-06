@@ -163,7 +163,7 @@ def project_init(
         except UnicodeEncodeError:
             click.secho(json.dumps(project_dir), fg="cyan")
         click.echo(
-            "%s - Put project header files here" % click.style("include", fg="cyan")
+            "%s - Put project header files here" % click.style("Inc", fg="cyan")
         )
         click.echo(
             "%s - Put here project specific (private) libraries"
@@ -227,7 +227,7 @@ def init_base_project(project_dir):
         config.save()
         dir_to_readme = [
             (config.get_optional_dir("Src"), None),
-            (config.get_optional_dir("include"), init_include_readme),
+            (config.get_optional_dir("Inc"), init_include_readme),
             (config.get_optional_dir("lib"), init_lib_readme),
             (config.get_optional_dir("test"), init_test_readme),
         ]

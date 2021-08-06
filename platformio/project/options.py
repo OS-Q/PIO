@@ -206,13 +206,13 @@ ProjectOptions = OrderedDict(
             ),
             ConfigPlatformioOption(
                 group="directory",
-                name="include_dir",
+                name="Inc_dir",
                 description=(
                     "A default location for project header files. PlatformIO Build "
                     "System automatically adds this path to CPPPATH scope"
                 ),
                 sysenvvar="PLATFORMIO_INCLUDE_DIR",
-                default=os.path.join("$PROJECT_DIR", "include"),
+                default=os.path.join("$PROJECT_DIR", "Inc"),
             ),
             ConfigPlatformioOption(
                 group="directory",
