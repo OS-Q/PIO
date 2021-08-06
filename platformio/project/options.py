@@ -216,7 +216,7 @@ ProjectOptions = OrderedDict(
             ),
             ConfigPlatformioOption(
                 group="directory",
-                name="src_dir",
+                name="Src_dir",
                 description=(
                     "A default location where PlatformIO Build System looks for the "
                     "project C/C++ source files"
