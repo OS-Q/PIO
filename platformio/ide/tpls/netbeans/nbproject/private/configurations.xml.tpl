@@ -4,7 +4,7 @@
     <df root="." name="0">
       <df name="lib">
       </df>
-      <df name="src">
+      <df name="Src">
       </df>
       <in>platformio.ini</in>
     </df>

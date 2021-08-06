@@ -156,7 +156,7 @@ class PackagePacker(object):
                 else ManifestParserFactory.new_from_url(self.manifest_uri)
             )
             manifest = ManifestSchema().load_manifest(mp.as_dict())
-            include = manifest.get("export", {}).get("include", [])
+            include = manifest.get("export", {}).get("Inc", [])
             if len(include) == 1:
                 if not os.path.isdir(os.path.join(src, include[0])):
                     raise PackageException(
@@ -172,7 +172,7 @@ class PackagePacker(object):
         return src
 
     def _create_tarball(self, src, dst, manifest):
-        include = manifest.get("export", {}).get("include")
+        include = manifest.get("export", {}).get("Inc")
         exclude = manifest.get("export", {}).get("exclude")
         # remap root
         if (
@@ -183,7 +183,7 @@ class PackagePacker(object):
             src = os.path.join(src, include[0])
             with open(os.path.join(src, "library.json"), "w") as fp:
                 manifest_updated = manifest.copy()
-                del manifest_updated["export"]["include"]
+                del manifest_updated["export"]["Inc"]
                 json.dump(manifest_updated, fp, indent=2, ensure_ascii=False)
             include = None
 

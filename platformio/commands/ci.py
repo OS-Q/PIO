@@ -45,7 +45,7 @@ def validate_path(ctx, param, value):  # pylint: disable=unused-argument
 
 
 @click.command("ci", short_help="Continuous integration")
-@click.argument("src", nargs=-1, callback=validate_path)
+@click.argument("Src", nargs=-1, callback=validate_path)
 @click.option("-l", "--lib", multiple=True, callback=validate_path, metavar="DIRECTORY")
 @click.option("--exclude", multiple=True)
 @click.option("-b", "--board", multiple=True, metavar="ID", callback=validate_boards)
@@ -133,7 +133,7 @@ def _copy_contents(dst_dir, contents):
 
     dst_dir_name = os.path.basename(dst_dir)
 
-    if dst_dir_name == "src" and len(items["dirs"]) == 1:
+    if dst_dir_name == "Src" and len(items["dirs"]) == 1:
         shutil.copytree(list(items["dirs"]).pop(), dst_dir, symlinks=True)
     else:
         if not os.path.isdir(dst_dir):

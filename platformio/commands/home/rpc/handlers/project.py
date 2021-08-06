@@ -253,7 +253,7 @@ class ProjectRPC:
 
         with fs.cd(project_dir):
             config = ProjectConfig()
-            src_dir = config.get_optional_dir("src")
+            src_dir = config.get_optional_dir("Src")
             main_path = os.path.join(
                 src_dir, "main.%s" % ("cpp" if is_cpp_project else "c")
             )
@@ -307,7 +307,7 @@ class ProjectRPC:
         )
         with fs.cd(project_dir):
             config = ProjectConfig()
-            src_dir = config.get_optional_dir("src")
+            src_dir = config.get_optional_dir("Src")
             if os.path.isdir(src_dir):
                 fs.rmtree(src_dir)
             shutil.copytree(arduino_project_dir, src_dir, symlinks=True)

@@ -163,13 +163,13 @@ def project_init(
         except UnicodeEncodeError:
             click.secho(json.dumps(project_dir), fg="cyan")
         click.echo(
-            "%s - Put project header files here" % click.style("include", fg="cyan")
+            "%s - Put project header files here" % click.style("Inc", fg="cyan")
         )
         click.echo(
             "%s - Put here project specific (private) libraries"
             % click.style("lib", fg="cyan")
         )
-        click.echo("%s - Put project source files here" % click.style("src", fg="cyan"))
+        click.echo("%s - Put project source files here" % click.style("Src", fg="cyan"))
         click.echo(
             "%s - Project Configuration File" % click.style("platformio.ini", fg="cyan")
         )
@@ -226,8 +226,8 @@ def init_base_project(project_dir):
         config = ProjectConfig()
         config.save()
         dir_to_readme = [
-            (config.get_optional_dir("src"), None),
-            (config.get_optional_dir("include"), init_include_readme),
+            (config.get_optional_dir("Src"), None),
+            (config.get_optional_dir("Inc"), init_include_readme),
             (config.get_optional_dir("lib"), init_lib_readme),
             (config.get_optional_dir("test"), init_test_readme),
         ]

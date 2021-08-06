@@ -83,12 +83,12 @@ class RunOrTestClient(AsyncClientBase):
     def _add_project_source_items(self, cfg, psync):
         psync.add_item(cfg.get_optional_dir("lib"), "lib")
         psync.add_item(
-            cfg.get_optional_dir("include"),
-            "include",
+            cfg.get_optional_dir("Inc"),
+            "Inc",
             cb_filter=self._cb_tarfile_filter,
         )
         psync.add_item(
-            cfg.get_optional_dir("src"), "src", cb_filter=self._cb_tarfile_filter
+            cfg.get_optional_dir("Src"), "Src", cb_filter=self._cb_tarfile_filter
         )
         if set(["buildfs", "uploadfs", "uploadfsota"]) & set(
             self.options.get("target", [])

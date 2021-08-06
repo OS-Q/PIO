@@ -113,8 +113,8 @@ def compute_project_checksum(config):
     # project file structure
     check_suffixes = (".c", ".cc", ".cpp", ".h", ".hpp", ".s", ".S")
     for d in (
-        config.get_optional_dir("include"),
-        config.get_optional_dir("src"),
+        config.get_optional_dir("Inc"),
+        config.get_optional_dir("Src"),
         config.get_optional_dir("lib"),
     ):
         if not isdir(d):

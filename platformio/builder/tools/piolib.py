@@ -173,16 +173,16 @@ class LibBuilderBase(object):
     @property
     def include_dir(self):
         if not all(
-            os.path.isdir(os.path.join(self.path, d)) for d in ("include", "src")
+            os.path.isdir(os.path.join(self.path, d)) for d in ("Inc", "Src")
         ):
             return None
-        return os.path.join(self.path, "include")
+        return os.path.join(self.path, "Inc")
 
     @property
     def src_dir(self):
         return (
-            os.path.join(self.path, "src")
-            if os.path.isdir(os.path.join(self.path, "src"))
+            os.path.join(self.path, "Src")
+            if os.path.isdir(os.path.join(self.path, "Src"))
             else self.path
         )
 
@@ -481,7 +481,7 @@ class ArduinoLibBuilder(LibBuilderBase):
 
     def get_include_dirs(self):
         include_dirs = LibBuilderBase.get_include_dirs(self)
-        if os.path.isdir(os.path.join(self.path, "src")):
+        if os.path.isdir(os.path.join(self.path, "Src")):
             return include_dirs
         if os.path.isdir(os.path.join(self.path, "utility")):
             include_dirs.append(os.path.join(self.path, "utility"))
@@ -489,7 +489,7 @@ class ArduinoLibBuilder(LibBuilderBase):
 
     @property
     def src_filter(self):
-        src_dir = os.path.join(self.path, "src")
+        src_dir = os.path.join(self.path, "Src")
         if os.path.isdir(src_dir):
             # pylint: disable=no-member
             src_filter = LibBuilderBase.src_filter.fget(self)
@@ -555,8 +555,8 @@ class MbedLibBuilder(LibBuilderBase):
 
     @property
     def include_dir(self):
-        if os.path.isdir(os.path.join(self.path, "include")):
-            return os.path.join(self.path, "include")
+        if os.path.isdir(os.path.join(self.path, "Inc")):
+            return os.path.join(self.path, "Inc")
         return None
 
     @property
@@ -793,7 +793,7 @@ class PlatformIOLibBuilder(LibBuilderBase):
         if (
             "build" not in self._manifest
             and self._has_arduino_manifest()
-            and not os.path.isdir(os.path.join(self.path, "src"))
+            and not os.path.isdir(os.path.join(self.path, "Src"))
             and os.path.isdir(os.path.join(self.path, "utility"))
         ):
             include_dirs.append(os.path.join(self.path, "utility"))
