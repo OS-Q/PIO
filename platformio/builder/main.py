@@ -115,10 +115,8 @@ env.Replace(
     PROJECT_LIBDEPS_DIR=config.get_optional_dir("libdeps"),
     PROJECT_INCLUDE_DIR=config.get_optional_dir("Inc"),
     PROJECT_SRC_DIR=config.get_optional_dir("Src"),
-    PROJECTSRC_DIR=config.get_optional_dir("Src"),  # legacy for dev/platform
     PROJECT_TEST_DIR=config.get_optional_dir("test"),
     PROJECT_DATA_DIR=config.get_optional_dir("data"),
-    PROJECTDATA_DIR=config.get_optional_dir("data"),  # legacy for dev/platform
     PROJECT_BUILD_DIR=config.get_optional_dir("build"),
     BUILD_CACHE_DIR=config.get_optional_dir("build_cache"),
     LIBSOURCE_DIRS=[

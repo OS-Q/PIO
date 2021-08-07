@@ -173,16 +173,16 @@ class LibBuilderBase(object):
     @property
     def include_dir(self):
         if not all(
-            os.path.isdir(os.path.join(self.path, d)) for d in ("Inc", "Src")
+            os.path.isdir(os.path.join(self.path, d)) for d in ("include", "src")
         ):
             return None
-        return os.path.join(self.path, "Inc")
+        return os.path.join(self.path, "include")
 
     @property
     def src_dir(self):
         return (
-            os.path.join(self.path, "Src")
-            if os.path.isdir(os.path.join(self.path, "Src"))
+            os.path.join(self.path, "src")
+            if os.path.isdir(os.path.join(self.path, "src"))
             else self.path
         )
 
@@ -489,7 +489,7 @@ class ArduinoLibBuilder(LibBuilderBase):
 
     @property
     def src_filter(self):
-        src_dir = os.path.join(self.path, "Src")
+        src_dir = os.path.join(self.path, "src")
         if os.path.isdir(src_dir):
             # pylint: disable=no-member
             src_filter = LibBuilderBase.src_filter.fget(self)
@@ -793,7 +793,7 @@ class PlatformIOLibBuilder(LibBuilderBase):
         if (
             "build" not in self._manifest
             and self._has_arduino_manifest()
-            and not os.path.isdir(os.path.join(self.path, "Src"))
+            and not os.path.isdir(os.path.join(self.path, "src"))
             and os.path.isdir(os.path.join(self.path, "utility"))
         ):
             include_dirs.append(os.path.join(self.path, "utility"))
