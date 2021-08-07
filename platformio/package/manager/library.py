@@ -64,7 +64,7 @@ class LibraryPackageManager(BasePackageManager):  # pylint: disable=too-many-anc
             for fname in files:
                 if not fname.endswith((".c", ".cpp", ".h", ".S")):
                     continue
-                if os.path.isdir(os.path.join(os.path.dirname(root), "Src")):
+                if os.path.isdir(os.path.join(os.path.dirname(root), "src")):
                     return os.path.dirname(root)
                 return root
         return path
