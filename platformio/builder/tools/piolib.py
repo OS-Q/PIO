@@ -481,7 +481,7 @@ class ArduinoLibBuilder(LibBuilderBase):
 
     def get_include_dirs(self):
         include_dirs = LibBuilderBase.get_include_dirs(self)
-        if os.path.isdir(os.path.join(self.path, "Src")):
+        if os.path.isdir(os.path.join(self.path, "src")):
             return include_dirs
         if os.path.isdir(os.path.join(self.path, "utility")):
             include_dirs.append(os.path.join(self.path, "utility"))
