@@ -34,7 +34,7 @@ CONFIG_HEADER = """
 ;   Advanced options: extra scripting
 ;
 ; Please visit documentation for the other options and examples
-; https://docs.platformio.org/page/projectconf.html
+; https://doc.os-q.com/pio/page/projectconf.html
 """
 
 

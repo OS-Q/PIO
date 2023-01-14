@@ -1,22 +1,31 @@
-name: Examples
+name: examples
 
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'platformio/**'
+      - 'examples/**'
+      - '**/examples.yml'
+  schedule:
+    - cron: "30 23 * * *"
 
 jobs:
   build:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     env:
       PIO_INSTALL_DEVPLATFORM_OWNERNAMES: "platformio"
-      PIO_INSTALL_DEVPLATFORM_NAMES: "aceinna_imu,atmelavr,atmelmegaavr,atmelsam,espressif32,espressif8266,nordicnrf52,raspberrypi,ststm32,teensy"
+      PIO_INSTALL_DEVPLATFORM_NAMES: "atmelavr,atmelmegaavr,atmelsam,espressif32,nordicnrf52,raspberrypi,ststm32,teensy"
 
     steps:
       - uses: actions/checkout@v3
         with:
+          token: ${{ secrets.OSQ_REPO_TOKEN }}
           submodules: "recursive"
 
       - name: Set up Python
@@ -51,13 +60,3 @@ jobs:
           PLATFORMIO_WORKSPACE_DIR: C:/pio-workspace/$PROJECT_HASH
         run: |
           tox -e testexamples
-
-      - name: Slack Notification
-        uses: homoluctus/slatify@master
-        if: failure()
-        with:
-          type: ${{ job.status }}
-          job_name: '*Examples*'
-          commit: true
-          url: ${{ secrets.SLACK_BUILD_WEBHOOK }}
-          token: ${{ secrets.SLACK_GITHUB_TOKEN }}

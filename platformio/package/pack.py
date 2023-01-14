@@ -36,7 +36,7 @@ class PackagePacker:
     INCLUDE_DEFAULT = list(ManifestFileType.items().values()) + [
         "README",
         "README.md",
-        "README.rst",
+        "desc.rst",
         "LICENSE",
     ]
     EXCLUDE_DEFAULT = [

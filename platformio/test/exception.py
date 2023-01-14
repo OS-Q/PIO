@@ -25,7 +25,7 @@ class TestDirNotExistsError(UnitTestError, UserSideException):
         "A test folder '{0}' does not exist.\nPlease create 'test' "
         "directory in the project root and put a test suite.\n"
         "More details about Unit "
-        "Testing: https://docs.platformio.org/en/latest/advanced/"
+        "Testing: https://doc.os-q.com/pio/advanced/"
         "unit-testing/index.html"
     )
 

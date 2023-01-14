@@ -67,7 +67,7 @@ def configure():
         raise exception.CygwinEnvDetected()
 
     # https://urllib3.readthedocs.org
-    # /en/latest/security.html#insecureplatformwarning
+    # /pio/latest/security.html#insecureplatformwarning
     try:
         import urllib3  # pylint: disable=import-outside-toplevel
 
@@ -120,7 +120,7 @@ An unexpected error occurred. Further steps:
   `pip install -U platformio` command
 
 * Try to find answer in FAQ Troubleshooting section
-  https://docs.platformio.org/page/faq/index.html
+  https://doc.os-q.com/pio/page/faq/index.html
 
 * Report this problem to the developers
   https://github.com/platformio/platformio-core/issues

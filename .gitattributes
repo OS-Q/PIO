@@ -1,0 +1,5 @@
+docs merge=ours
+platforms merge=ours
+examples merge=ours
+.github merge=ours
+README.md merge=ours

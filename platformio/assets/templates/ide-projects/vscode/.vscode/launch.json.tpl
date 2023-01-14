@@ -93,7 +93,7 @@
 //
 // PIO Unified Debugger
 //
-// Documentation: https://docs.platformio.org/page/plus/debugging.html
-// Configuration: https://docs.platformio.org/page/projectconf/section_env_debug.html
+// Documentation: https://doc.os-q.com/pio/page/plus/debugging.html
+// Configuration: https://doc.os-q.com/pio/page/projectconf/section_env_debug.html
 
 {{ json.dumps(get_launch_configuration(), indent=4, ensure_ascii=False) }}

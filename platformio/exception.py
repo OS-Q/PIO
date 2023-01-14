@@ -52,7 +52,7 @@ class MissedUdevRules(InvalidUdevRules):
 
     MESSAGE = (
         "Warning! Please install `99-platformio-udev.rules`. \nMore details: "
-        "https://docs.platformio.org/en/latest/core/installation/udev-rules.html"
+        "https://doc.os-q.com/pio/core/installation/udev-rules.html"
     )
 
 
@@ -61,7 +61,7 @@ class OutdatedUdevRules(InvalidUdevRules):
     MESSAGE = (
         "Warning! Your `{0}` are outdated. Please update or reinstall them."
         "\nMore details: "
-        "https://docs.platformio.org/en/latest/core/installation/udev-rules.html"
+        "https://doc.os-q.com/pio/core/installation/udev-rules.html"
     )
 
 
@@ -110,7 +110,7 @@ class UpgradeError(PlatformioException):
 
 * Upgrade using `pip install -U platformio`
 * Try different installation/upgrading steps:
-  https://docs.platformio.org/page/installation.html
+  https://doc.os-q.com/pio/page/installation.html
 """
 
 

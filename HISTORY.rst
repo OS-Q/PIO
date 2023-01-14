@@ -8,12 +8,12 @@ Release Notes
 
 .. _release_notes_6:
 
-PlatformIO Core 6
+PIO Core 6
 -----------------
 
 **A professional collaborative platform for declarative, safety-critical, and test-driven embedded development.**
 
-6.1.6 (2022-??-??)
+6.1.6 (2023-02-01)
 ~~~~~~~~~~~~~~~~~~
 
 * Added support for Python 3.11

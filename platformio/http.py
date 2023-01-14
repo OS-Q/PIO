@@ -75,7 +75,7 @@ class HTTPSessionIterator:
             endpoints = [endpoints]
         self.endpoints = endpoints
         self.endpoints_iter = iter(endpoints)
-        # https://urllib3.readthedocs.io/en/stable/reference/urllib3.util.html
+        # https://urllib3.readthedocs.io/pio/stable/reference/urllib3.util.html
         self.retry = Retry(
             total=5,
             backoff_factor=1,  # [0, 2, 4, 8, 16] secs
