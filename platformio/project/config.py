@@ -168,7 +168,7 @@ class ProjectConfigBase:
                 yield (section, option)
             if self._parser.has_option(section, "extends"):
                 extends_queue.extend(
-                    self.parse_multi_values(self._parser.get(section, "extends"))[::-1]
+                    self.parse_multi_values(self._parser.get(section, "extends"))
                 )
 
     def options(self, section=None, env=None):
