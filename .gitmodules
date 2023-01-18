@@ -7,3 +7,6 @@
 [submodule "platforms/rp2040"]
 	path = platforms/rp2040
 	url = https://github.com/OS-Q/platform-rp2040
+[submodule "platforms/esp32"]
+	path = platforms/esp32
+	url = https://github.com/OS-Q/platform-esp32

@@ -1,4 +1,4 @@
-﻿# [PIO](https://docs.os-q.com/pio)
+﻿# [PIO](https://doc.os-q.com/pio)
 
 [![Build Status](https://github.com/OS-Q/pio/workflows/core/badge.svg)](https://github.com/OS-Q/pio/actions/workflows/core.yml)
 [![Build Status](https://github.com/OS-Q/pio/workflows/examples/badge.svg)](https://github.com/OS-Q/pio/actions/workflows/examples.yml)
