@@ -17,8 +17,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Check out
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: "recursive"
           token: ${{ secrets.OSQ_REPO_TOKEN }}
@@ -36,8 +35,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
-
+          python-version: "3.11"
       - name: Install dependencies
         working-directory: www
         run: |
@@ -87,7 +85,7 @@ jobs:
 
       - name: Checkout latest Docs
         continue-on-error: true
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.DOCS_REPO }}
           path: ${{ env.DOCS_DIR }}
